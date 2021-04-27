@@ -15,8 +15,6 @@ def test__no_authentication_credentials__gives_unauthorized_error__using_request
 
     response = requests.get(url, headers=headers, data=payload)
 
-    print(response.text)
-
     expected_response = {
         'errors': {
             'unauthorized': {'detail': 'Authentication credentials were not provided.'

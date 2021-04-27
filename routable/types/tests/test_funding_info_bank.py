@@ -15,10 +15,3 @@ class Test_FundingInfoBank:
 
         check.equal("abc123", sut.id)
 
-    def test__str__(self):
-        funding_info_bank = Dummy.funding_info_bank()
-        funding_info_bank.id = "x"
-
-        sut = str(funding_info_bank)
-
-        check.equal("<FundingInfoBank id=x>", sut)

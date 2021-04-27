@@ -32,3 +32,11 @@ class Test_RoutableType:
         membership = Dummy.membership()
 
         check.equal(membership.__str__(), membership.__repr__())
+
+    def test__str__on_class_without_overridden(self):
+        object_ = Dummy.funding_info_bank()
+        object_.id = "x"
+
+        sut = str(object_)
+
+        check.equal("<FundingInfoBank id=x>", sut)

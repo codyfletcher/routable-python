@@ -1,7 +1,6 @@
 import pytest_check as check
 
 from routable.types.membership import Membership
-from routable.types.routable_type import RoutableType
 from routable.types.tests.dummy import Dummy
 
 
@@ -39,8 +38,3 @@ class Test_Membership:
         sut = str(membership)
 
         check.equal("<Membership id=x first_name=y last_name=z>", sut)
-
-    def test_Membership_parent_class_is_RoutableType(self):
-        membership = Dummy.membership()
-
-        assert isinstance(membership, RoutableType)

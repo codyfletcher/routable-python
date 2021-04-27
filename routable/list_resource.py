@@ -1,4 +1,8 @@
+from typing import List
+
 import requests
+
+from routable.types.membership import Membership
 
 
 class ListResource:
@@ -14,7 +18,9 @@ class ListResource:
 
 
 class MembershipList(ListResource):
-    def list(self):
+    def list(self) -> List[Membership]:
         response_dict = self.content_from_endpoint("memberships/")
-        result = response_dict["data"]
+        result = []
+        for x in response_dict["data"]:
+            result.append(Membership(x))
         return result

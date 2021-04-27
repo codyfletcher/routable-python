@@ -1,11 +1,13 @@
 from unittest.mock import patch
 
+import pytest_check as check
+
 from routable import Client
 from routable.conftest import MockResponse
 
 
 class Test_Memberships:
-    def test__memberships_list__returns_a_list_of_dict(self):
+    def test__memberships_list__returns_a_list_of_Membership(self):
         client = Client("FAKE_AUTHENTICATION_TOKEN")
         dummy_response_json_string = """{
           "links": {
@@ -17,14 +19,14 @@ class Test_Memberships:
           "data": [
             {
               "type": "Membership",
-              "id": "660640d3-82e0-43a2-ac8a-071d63c15f54",
+              "id": "abc123",
               "attributes": {
-                "avatar": null,
-                "email": "michelle@fedex.com",
-                "first_name": "Michelle",
+                "avatar": "https://host/image.png",
+                "email": "email@host",
+                "first_name": "first",
                 "is_approver": true,
                 "is_disabled": false,
-                "last_name": "Jones"
+                "last_name": "last"
               }
             }
           ],
@@ -40,20 +42,14 @@ class Test_Memberships:
 
         with patch('routable.list_resource.requests.get') as mock_get:
             mock_get.side_effect = lambda *args, **kwargs: MockResponse(dummy_response_json_string, 200)
+
             sut = client.memberships.list()
 
-            expected = [
-                {
-                    "type": "Membership",
-                    "id": "660640d3-82e0-43a2-ac8a-071d63c15f54",
-                    "attributes": {
-                        "avatar": None,
-                        "email": "michelle@fedex.com",
-                        "first_name": "Michelle",
-                        "is_approver": True,
-                        "is_disabled": False,
-                        "last_name": "Jones"
-                    }
-                }
-            ]
-            assert expected == sut
+            first_membership = sut[0]
+            check.equal("abc123", first_membership.id)
+            check.equal("email@host", first_membership.email)
+            check.equal("first", first_membership.first_name)
+            check.equal("last", first_membership.last_name)
+            check.equal("https://host/image.png", first_membership.avatar)
+            check.is_true(first_membership.is_approver)
+            check.is_false(first_membership.is_disabled)

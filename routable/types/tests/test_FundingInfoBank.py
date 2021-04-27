@@ -1,6 +1,6 @@
 import pytest_check as check
 
-from routable.types.funding_info_bank import FundingInfoBank
+from routable.types.FundingInfoBank import FundingInfoBank
 
 
 class Test_FundingInfoBank:

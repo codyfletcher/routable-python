@@ -1,6 +1,6 @@
 from typing import Optional
 
-from routable.types.routable_type import RoutableType
+from routable.types.RoutableType import RoutableType
 
 
 class FundingAccount(RoutableType):

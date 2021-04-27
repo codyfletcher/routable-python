@@ -1,6 +1,6 @@
 import pytest_check as check
 
-from routable.types.membership import Membership
+from routable.types.Membership import Membership
 from routable.types.tests.dummy import Dummy
 
 

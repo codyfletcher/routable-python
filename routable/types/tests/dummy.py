@@ -1,5 +1,5 @@
-from routable.types.funding_info_bank import FundingInfoBank
-from routable.types.membership import Membership
+from routable.types.FundingInfoBank import FundingInfoBank
+from routable.types.Membership import Membership
 
 VALID_STR = "any"
 VALID_BOOL = True

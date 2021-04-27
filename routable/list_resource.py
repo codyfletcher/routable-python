@@ -2,7 +2,7 @@ from typing import List
 
 import requests
 
-from routable.types.membership import Membership
+from routable.types.Membership import Membership
 
 
 class ListResource:

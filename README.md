@@ -1,6 +1,8 @@
-## Examples
+# routable-python
 
-### Basic Usage
+This is a work-in-progress.
+
+## Getting Started
 
 ```python
 from routable import Client
@@ -14,4 +16,26 @@ memberships = client.memberships.list()
 for m in memberships:
     print(m)
 
+```
+
+## Working in Development
+
+Get a simple development environment created and activated.
+
+```shell
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements-dev.txt
+```
+
+Run the tests:
+
+```shell
+pytest .
+```
+
+Run mypy
+
+```shell
+mypy .
 ```

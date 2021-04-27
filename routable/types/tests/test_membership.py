@@ -5,8 +5,8 @@ from routable.types.tests.dummy import Dummy
 
 
 class Test_Membership:
-    def test__Membership__instantiation__properties_are_set(self):
-        membership_dict = {
+    def test__instantiation__properties_are_set(self):
+        data = {
             "type": "Membership",
             "id": "abc123",
             "attributes": {
@@ -19,7 +19,7 @@ class Test_Membership:
             }
         }
 
-        sut = Membership(membership_dict)
+        sut = Membership(data)
 
         check.equal("abc123", sut.id)
         check.equal("email@host", sut.email)
@@ -29,7 +29,7 @@ class Test_Membership:
         check.is_true(sut.is_approver)
         check.is_false(sut.is_disabled)
 
-    def test__Membership__str__(self):
+    def test__str__(self):
         membership = Dummy.membership()
         membership.id = "x"
         membership.first_name = "y"

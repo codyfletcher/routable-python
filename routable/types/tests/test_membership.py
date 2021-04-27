@@ -24,6 +24,6 @@ class Test_Membership:
         check.equal("email@host", sut.email)
         check.equal("first", sut.first_name)
         check.equal("last", sut.last_name)
+        check.equal("https://host/image.png", sut.avatar)
         check.is_true(sut.is_approver)
         check.is_false(sut.is_disabled)
-        check.equal("https://host/image.png", sut.avatar)

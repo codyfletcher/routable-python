@@ -1,8 +1,5 @@
 import json
 
-VALID_STR = "any"
-VALID_BOOL = True
-
 
 class MockResponse:
     def __init__(self, response_json_str, status_code):

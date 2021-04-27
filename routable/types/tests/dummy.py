@@ -1,5 +1,7 @@
-from routable.conftest import VALID_STR, VALID_BOOL
 from routable.types.membership import Membership
+
+VALID_STR = "any"
+VALID_BOOL = True
 
 
 class Dummy:

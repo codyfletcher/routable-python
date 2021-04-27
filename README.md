@@ -1,6 +1,13 @@
 # routable-python
 
-This is a work-in-progress.
+This is a work-in-progress. I'm using this as an exercise to practice my craft, kick the tires on the [Routable API](https://developers.routable.com/docs), and get to know the domain/language in the [Routable universe](https://apidocs.routable.com/). 
+
+How I've been working:
+
+- Test-driving (TDD) the implementation of things. Attempting to _earn_ every line of code.
+- Working in small increments ([DTSTTCPW](http://c2.com/xp/DoTheSimplestThingThatCouldPossiblyWork.html))
+- Using [Arlo's Commit Notation](https://github.com/RefactoringCombos/ArlosCommitNotation) for commit messages
+- Attempting to avoid [primitive obsession](https://wiki.c2.com/?PrimitiveObsession) by mirroring the domain (e.g. retrieve a list of `Membership` instead of `dict`)
 
 ## Getting Started
 
@@ -20,7 +27,7 @@ for m in memberships:
 
 ## Working in Development
 
-Get a simple development environment created and activated.
+Get a simple development environment created and activated:
 
 ```shell
 python -m venv venv
@@ -34,7 +41,7 @@ Run the tests:
 pytest .
 ```
 
-Run mypy
+Run mypy:
 
 ```shell
 mypy .

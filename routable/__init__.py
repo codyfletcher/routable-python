@@ -1,16 +1,4 @@
-import requests
-
-
-class MembershipList:
-    def __init__(self, host, headers):
-        self.host = host
-        self.headers = headers
-
-    def list(self):
-        url = f"https://{self.host}/memberships/"
-        response = requests.get(url, headers=self.headers, data={})
-        response_dict = response.json()
-        return response_dict["data"]
+from routable.list_resource import MembershipList
 
 
 class Client:

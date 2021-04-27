@@ -1,7 +1,9 @@
 from typing import Optional
 
+from routable.types.routable_type import RoutableType
 
-class Membership:
+
+class Membership(RoutableType):
     id: str
     email: str
     first_name: str

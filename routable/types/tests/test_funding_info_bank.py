@@ -16,7 +16,6 @@ class Test_FundingInfoBank:
 
         check.equal("abc123", sut.id)
 
-    @pytest.mark.skip
     def test__str__(self):
         funding_info_bank = Dummy.funding_info_bank()
         funding_info_bank.id = "x"

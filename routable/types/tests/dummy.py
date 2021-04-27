@@ -1,3 +1,4 @@
+from routable.types.funding_info_bank import FundingInfoBank
 from routable.types.membership import Membership
 
 VALID_STR = "any"
@@ -20,3 +21,11 @@ class Dummy:
             }
         }
         return Membership(data)
+
+    @classmethod
+    def funding_info_bank(cls) -> FundingInfoBank:
+        data = {
+            "type": "FundingInfoBank",
+            "id": VALID_STR
+        }
+        return FundingInfoBank(data)

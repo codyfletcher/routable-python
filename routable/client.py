@@ -1,4 +1,4 @@
-from routable import MembershipList
+from routable.list_resource import MembershipList
 
 
 class Client:

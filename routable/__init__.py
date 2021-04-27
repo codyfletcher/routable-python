@@ -1,9 +1,15 @@
+import requests
+
+
 class MembershipList:
-    def __init__(self):
-        pass
+    def __init__(self, headers):
+        self.headers = headers
 
     def list(self):
-        return []
+        url = "https://api.sandbox.routable.com/memberships/"
+        response = requests.get(url, headers=self.headers, data={})
+        response_dict = response.json()
+        return response_dict["data"]
 
 
 class Client:
@@ -16,5 +22,4 @@ class Client:
 
     @property
     def memberships(self):
-        memberships = MembershipList()
-        return memberships
+        return MembershipList(self.headers)

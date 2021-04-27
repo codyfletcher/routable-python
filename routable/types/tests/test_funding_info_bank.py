@@ -1,4 +1,3 @@
-import pytest
 import pytest_check as check
 
 from routable.types.funding_info_bank import FundingInfoBank

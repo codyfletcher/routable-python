@@ -3,7 +3,7 @@ from unittest.mock import patch
 import pytest_check as check
 
 from routable import Client
-from routable.conftest import MockResponse
+from routable.tests.mock_response import MockResponse
 
 
 class Test_Memberships:

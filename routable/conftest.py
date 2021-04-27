@@ -8,3 +8,7 @@ class MockResponse:
 
     def json(self):
         return json.loads(self.response_json_str)
+
+
+VALID_STR = "any"
+VALID_BOOL = True

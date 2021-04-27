@@ -1,10 +1,11 @@
 import pytest_check as check
 
+from routable.conftest import VALID_STR, VALID_BOOL
 from routable.types.membership import Membership
 
 
 class Test_Membership:
-    def test__Membership__instantiation_from_dict(self):
+    def test__Membership__instantiation__properties_are_set(self):
         data_dict = {
             "type": "Membership",
             "id": "abc123",
@@ -27,3 +28,39 @@ class Test_Membership:
         check.equal("https://host/image.png", sut.avatar)
         check.is_true(sut.is_approver)
         check.is_false(sut.is_disabled)
+
+    def test__Membership__str__(self):
+        data_dict = {
+            "type": "Membership",
+            "id": "x",
+            "attributes": {
+                "first_name": "y",
+                "last_name": "z",
+                "email": VALID_STR,
+                "is_approver": VALID_BOOL,
+                "is_disabled": VALID_BOOL,
+                "avatar": VALID_STR,
+            }
+        }
+        instance = Membership(data_dict)
+
+        sut = str(instance)
+
+        check.equal("<Membership id=x first_name=y last_name=z>", sut)
+
+    def test__Membership__repl__matches__str__(self):
+        data_dict = {
+            "type": "Membership",
+            "id": "x",
+            "attributes": {
+                "first_name": "y",
+                "last_name": "z",
+                "email": VALID_STR,
+                "is_approver": VALID_BOOL,
+                "is_disabled": VALID_BOOL,
+                "avatar": VALID_STR,
+            }
+        }
+        instance = Membership(data_dict)
+
+        check.equal(instance.__str__(), instance.__repr__())

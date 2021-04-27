@@ -5,11 +5,9 @@ class RoutableType:
         self.id = data["id"]
 
     def __eq__(self, other):
-        result = False
-        if type(self) == type(other):
-            if self.id == other.id:
-                result = True
-        return result
+        classes_match = type(self) == type(other)
+        ids_match = self.id == other.id
+        return classes_match and ids_match
 
     def __repr__(self):
         return self.__str__()

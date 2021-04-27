@@ -73,7 +73,7 @@ class Test__Client__membership:
           }
         }"""
 
-        with patch('routable.requests.get') as mock_get:
+        with patch('routable.list_resource.requests.get') as mock_get:
             mock_get.side_effect = lambda *args, **kwargs: MockResponse(dummy_response_json_string, 200)
             sut = client.memberships.list()
 

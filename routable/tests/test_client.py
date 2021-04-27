@@ -19,6 +19,7 @@ class Test__Client__instantiation:
         client = Client("FAKE_AUTHENTICATION_TOKEN")
 
         expected_default_headers = {
+            'Authorization': 'Bearer FAKE_AUTHENTICATION_TOKEN',
             'Accept': 'application/vnd.api+json',
             'Content-Type': 'application/vnd.api+json'
         }

@@ -7,8 +7,9 @@ class MembershipList:
 
 
 class Client:
-    def __init__(self, authentication_token):
+    def __init__(self, authentication_token:str):
         self.headers = {
+            'Authorization': f'Bearer {authentication_token}',
             'Accept': 'application/vnd.api+json',
             'Content-Type': 'application/vnd.api+json'
         }

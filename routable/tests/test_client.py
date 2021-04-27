@@ -15,6 +15,16 @@ class Test__Client__instantiation:
         with pytest.raises(TypeError):
             _ = Client()
 
+    def test_default_headers(self):
+        client = Client("FAKE_AUTHENTICATION_TOKEN")
+
+        expected_default_headers = {
+            'Accept': 'application/vnd.api+json',
+            'Content-Type': 'application/vnd.api+json'
+        }
+        assert expected_default_headers == client.headers
+
+
 
 def test__membership_list__returns_type_list():
     client = Client("FAKE_AUTHENTICATION_TOKEN")

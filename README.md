@@ -35,14 +35,56 @@ source venv/bin/activate
 pip install -r requirements-dev.txt
 ```
 
-Run the tests:
+### Python Tests (via `pytest`):
 
 ```shell
 pytest .
 ```
 
-Run mypy:
+### Static Type Checking (via `mypy`):
 
 ```shell
 mypy .
 ```
+
+### Code Metrics
+
+Calculate cyclometic complexity (via `radon`):
+
+```shell
+# View cyclomatic complexity for all (F)unctions, (C)lasses, and (M)ethods
+radon cc --show-complexity routable/
+
+# View cyclomatic complexity that is below a score of "A" 
+radon cc --show-complexity --min B routable/
+```
+
+Calculate Halstead Metrics (via `radon`):
+
+```shell
+# View on a per-file basis
+radon hal routable/ 
+
+# View on a per-function basis
+radon hal --functions routable/
+```
+
+(EXPERIMENTAL) Calculate maintainability index (via `radon`):
+
+```shell
+# View cyclomatic complexity for all (F)unctions, (C)lasses, and (M)ethods
+radon mi routable/
+```
+
+Calculate raw metrics (via `radon`):
+
+```shell
+# View metrics for each file (including summary)
+radon raw --summary routable/
+
+# View metrics for each file (including summary), excluding tests
+radon raw --summary --exclude "**/tests/**" routable/
+```
+
+
+

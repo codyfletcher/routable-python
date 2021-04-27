@@ -1,5 +1,13 @@
 -r requirements.txt
 
+# Python test runner/library
 pytest==6.2.3
+
+# pytest plugin - allows multiple failures per test
 pytest-check==1.0.1
+
+# Static Type Checking
 mypy==0.812
+
+# Code metrics
+radon==4.5.0

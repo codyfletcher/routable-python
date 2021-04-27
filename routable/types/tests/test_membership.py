@@ -1,6 +1,6 @@
 import pytest_check as check
 
-from routable.conftest import VALID_STR, VALID_BOOL, dummy_membership_dict
+from routable.conftest import dummy_membership_dict
 from routable.types.membership import Membership
 from routable.types.routable_type import RoutableType
 

@@ -4,7 +4,6 @@ from routable.types.routable_type import RoutableType
 
 
 class Membership(RoutableType):
-    id: str
     email: str
     first_name: str
     last_name: str
@@ -13,8 +12,7 @@ class Membership(RoutableType):
     is_disabled: bool
 
     def __init__(self, data: dict):
-        self._data = data
-        self.id = data["id"]
+        super().__init__(data)
         self.email = data["attributes"]["email"]
         self.first_name = data["attributes"]["first_name"]
         self.last_name = data["attributes"]["last_name"]

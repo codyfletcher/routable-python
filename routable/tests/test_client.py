@@ -16,7 +16,16 @@ def test_can_not_instantiate_Client_without_authentication_token__raises_TypeErr
         _ = Client()
 
 
-def test__membership_list():
+def test__membership_list__returns_type_list():
+    client = Client("FAKE_AUTHENTICATION_TOKEN")
+
+    sut = client.memberships.list()
+
+    assert list is type(sut)
+
+
+@pytest.mark.skip
+def test__membership_list__returns_real_data():
     client = Client("FAKE_AUTHENTICATION_TOKEN")
     dummy_response = """{
   "links": {

@@ -5,7 +5,7 @@ from routable.conftest import MockResponse
 
 
 class Test_Memberships:
-    def test__membership_list__returns_a_list_of_dict(self):
+    def test__memberships_list__returns_a_list_of_dict(self):
         client = Client("FAKE_AUTHENTICATION_TOKEN")
         dummy_response_json_string = """{
           "links": {

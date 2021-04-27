@@ -1,8 +1,8 @@
 import pytest_check as check
 
-from routable.conftest import dummy_membership
 from routable.types.membership import Membership
 from routable.types.routable_type import RoutableType
+from routable.types.tests.dummy import Dummy
 
 
 class Test_Membership:
@@ -31,7 +31,7 @@ class Test_Membership:
         check.is_false(sut.is_disabled)
 
     def test__Membership__str__(self):
-        membership = dummy_membership()
+        membership = Dummy.membership()
         membership.id = "x"
         membership.first_name = "y"
         membership.last_name = "z"
@@ -41,11 +41,11 @@ class Test_Membership:
         check.equal("<Membership id=x first_name=y last_name=z>", sut)
 
     def test__Membership__repl__matches__str__(self):
-        membership = dummy_membership()
+        membership = Dummy.membership()
 
         check.equal(membership.__str__(), membership.__repr__())
 
     def test_Membership_parent_class_is_RoutableType(self):
-        membership = dummy_membership()
+        membership = Dummy.membership()
 
         assert isinstance(membership, RoutableType)

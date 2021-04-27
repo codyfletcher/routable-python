@@ -7,23 +7,23 @@ class Test_Membership:
     def test__Membership__instantiation_from_dict(self):
         data_dict = {
             "type": "Membership",
-            "id": "660640d3-82e0-43a2-ac8a-071d63c15f54",
+            "id": "abc123",
             "attributes": {
-                "avatar": None,
-                "email": "michelle@fedex.com",
-                "first_name": "Michelle",
+                "email": "email@host",
+                "first_name": "first",
+                "last_name": "last",
                 "is_approver": True,
                 "is_disabled": False,
-                "last_name": "Jones"
+                "avatar": "https://host/image.png",
             }
         }
 
         sut = Membership(data_dict)
 
-        check.equal("660640d3-82e0-43a2-ac8a-071d63c15f54", sut.id)
-        # check.equal("?????", sut.avatar)
-        # check.equal("?????", sut.email)
-        # check.equal("?????", sut.first_name)
-        # check.equal("?????", sut.is_approver)
-        # check.equal("?????", sut.is_disabled)
-        # check.equal("?????", sut.last_name)
+        check.equal("abc123", sut.id)
+        check.equal("email@host", sut.email)
+        check.equal("first", sut.first_name)
+        check.equal("last", sut.last_name)
+        check.is_true(sut.is_approver)
+        check.is_false(sut.is_disabled)
+        check.equal("https://host/image.png", sut.avatar)

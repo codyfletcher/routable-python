@@ -11,3 +11,18 @@ class MockResponse:
 
     def json(self):
         return json.loads(self.response_json_str)
+
+
+def dummy_membership_dict() -> dict:
+    return {
+        "type": "Membership",
+        "id": VALID_STR,
+        "attributes": {
+            "first_name": VALID_STR,
+            "last_name": VALID_STR,
+            "email": VALID_STR,
+            "is_approver": VALID_BOOL,
+            "is_disabled": VALID_BOOL,
+            "avatar": VALID_STR,
+        }
+    }

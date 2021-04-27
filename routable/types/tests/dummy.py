@@ -3,6 +3,7 @@ from routable.types.membership import Membership
 
 VALID_STR = "any"
 VALID_BOOL = True
+VALID_DATETIME_STR = "2020-01-23T12:34:56.789012Z"
 
 
 class Dummy:
@@ -29,3 +30,5 @@ class Dummy:
             "id": VALID_STR
         }
         return FundingInfoBank(data)
+
+

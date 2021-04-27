@@ -40,11 +40,6 @@ class Test_Membership:
 
         check.equal("<Membership id=x first_name=y last_name=z>", sut)
 
-    def test__Membership__repl__matches__str__(self):
-        membership = Dummy.membership()
-
-        check.equal(membership.__str__(), membership.__repr__())
-
     def test_Membership_parent_class_is_RoutableType(self):
         membership = Dummy.membership()
 

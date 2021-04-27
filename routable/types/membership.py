@@ -22,6 +22,3 @@ class Membership(RoutableType):
 
     def __str__(self):
         return f"<{self.__class__.__name__} id={self.id} first_name={self.first_name} last_name={self.last_name}>"
-
-    def __repr__(self):
-        return self.__str__()

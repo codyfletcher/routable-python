@@ -10,3 +10,6 @@ class RoutableType:
             if self.id == other.id:
                 result = True
         return result
+
+    def __repr__(self):
+        return self.__str__()

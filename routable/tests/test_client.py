@@ -2,18 +2,18 @@ import pytest
 
 from routable import Client
 
+class Test__Client__instantiation:
+    def test_can_instantiate_Client_with_any_string_for_authentication_token(self):
+        authentication_token = "FAKE_AUTHENTICATION_TOKEN"
 
-def test_can_instantiate_Client_with_any_string_for_authentication_token():
-    authentication_token = "FAKE_AUTHENTICATION_TOKEN"
+        client = Client(authentication_token)
 
-    client = Client(authentication_token)
-
-    assert client is not None
+        assert client is not None
 
 
-def test_can_not_instantiate_Client_without_authentication_token__raises_TypeError():
-    with pytest.raises(TypeError):
-        _ = Client()
+    def test_can_not_instantiate_Client_without_authentication_token__raises_TypeError(self):
+        with pytest.raises(TypeError):
+            _ = Client()
 
 
 def test__membership_list__returns_type_list():

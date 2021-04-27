@@ -1,5 +1,7 @@
 import json
 
+from routable.types.membership import Membership
+
 VALID_STR = "any"
 VALID_BOOL = True
 
@@ -13,8 +15,8 @@ class MockResponse:
         return json.loads(self.response_json_str)
 
 
-def dummy_membership_dict() -> dict:
-    return {
+def dummy_membership() -> Membership:
+    membership_dict = {
         "type": "Membership",
         "id": VALID_STR,
         "attributes": {
@@ -26,3 +28,4 @@ def dummy_membership_dict() -> dict:
             "avatar": VALID_STR,
         }
     }
+    return Membership(membership_dict)

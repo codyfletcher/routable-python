@@ -4,8 +4,11 @@ from typing import Optional
 class Membership:
     id: str
     email: str
-    is_approver: bool
+    first_name: str
+    last_name: str
     avatar: Optional[str]
+    is_approver: bool
+    is_disabled: bool
 
     def __init__(self, data: dict):
         self._data = data

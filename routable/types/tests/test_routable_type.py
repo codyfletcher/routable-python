@@ -28,7 +28,7 @@ class Test_RoutableType:
 
         assert object_1 != object_2
 
-    def test__repl__matches__str__(self):
+    def test__repr__matches__str__(self):
         membership = Dummy.membership()
 
         check.equal(membership.__str__(), membership.__repr__())
